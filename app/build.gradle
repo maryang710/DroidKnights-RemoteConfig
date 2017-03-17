@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "io.github.droidknights.remoteconfig"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            File signingPropFile = rootProject.file('signing.properties')
+            Properties signingProp = new Properties()
+            signingProp.load(signingPropFile.newDataInputStream())
+
+            storeFile rootProject.file(signingProp.get('storeName'))
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+        }
+
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.facebook.stetho:stetho:1.4.2'
+    retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.5.1'
+
+    // TODO 1. 파이어 베이스 설치하기
+    compile 'com.google.firebase:firebase-core:10.2.0'
+    // TODO 2. 리모트 컨피그 설치하기
+    compile 'com.google.firebase:firebase-config:10.2.0'
+}
+
+// TODO 1. 파이어 베이스 설치하기
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'
+
+// TODO 1. 파이어 베이스 설치하기. google-services.json 을 Firebase Console에서 받아와 app 모듈에 추가해야 한다.

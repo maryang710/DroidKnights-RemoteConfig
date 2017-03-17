@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>example_key</key>
+        <value>example local default value</value>
+    </entry>
+    <entry>
+        <key>condition_example_key</key>
+        <value>condition example local default value</value>
+    </entry>
+
+    <entry>
+        <key>dev_some_key</key>
+        <value>some dev local default value</value>
+    </entry>
+    <entry>
+        <key>some_key</key>
+        <value>some release local default value</value>
+    </entry>
+
+    <entry>
+        <key>dev_some_json_key</key>
+        <value>{}</value>
+    </entry>
+    <entry>
+        <key>some_json_key</key>
+        <value>{}</value>
+    </entry>
+</defaultsMap>

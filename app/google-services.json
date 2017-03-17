@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "495478586611",
+    "firebase_url": "https://droidknights-remoteconfig.firebaseio.com",
+    "project_id": "droidknights-remoteconfig",
+    "storage_bucket": "droidknights-remoteconfig.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495478586611:android:a8dea14e6565449b",
+        "android_client_info": {
+          "package_name": "io.github.droidknights.remoteconfig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495478586611-iunm8acvvqqdug6t2ohq30paknfvehdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBei-S09oid9SPlVWFd6-J8kdxBGiUNc0I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
