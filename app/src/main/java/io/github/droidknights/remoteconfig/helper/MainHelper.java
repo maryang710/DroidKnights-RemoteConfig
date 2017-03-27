@@ -13,12 +13,9 @@ import io.github.droidknights.remoteconfig.util.RemoteConfigUtil;
 
 public class MainHelper {
 
-    private static final String TAG = MainHelper.class.getSimpleName();
-
-    // TODO 6. 값 받아오기.
     public void getDefault() {
         String example = RemoteConfigUtil.getConfigValue(RemoteConfigConstant.EXAMPLE_KEY);
-        Log.i(TAG, "example: " + example);
+        Log.i("MainHelper", "example: " + example);
 
         /**
          * TODO 7. 기본 값 설정하기.
@@ -29,21 +26,19 @@ public class MainHelper {
         // TODO 8. 변경 값 실시간으로 가져오기. RemoteConfig fetch로 업데이트 후 알아서 가져온다.
     }
 
-    // TODO 9. 조건에 따라 값 가져오기
     public void getByCondition() {
         String conditionExample = RemoteConfigUtil.getConfigValue(RemoteConfigConstant.CONDITION_EXAMPLE_KEY);
-        Log.i(TAG, "conditionExample: " + conditionExample);
+        Log.i("MainHelper", "conditionExample: " + conditionExample);
     }
 
-    // TODO 10. 응용하여 받아오기 - key를 Build Mode에 따라 분기한다.
     public void getByBuild() {
         String someByBuild = RemoteConfigUtil.getConfigValueByBuild(RemoteConfigConstant.SOME_KEY);
-        Log.i(TAG, "someByBuild: " + someByBuild);
+        Log.i("MainHelper", "someByBuild: " + someByBuild);
     }
 
     public JsonElement getAsJson() {
         JsonElement someJson = RemoteConfigUtil.getConfigJson(RemoteConfigConstant.SOME_JSON_KEY);
-        Log.i(TAG, "someJson: " + someJson);
+        Log.i("MainHelper", "someJson: " + someJson);
         return someJson;
     }
 }

@@ -28,7 +28,7 @@ public class BaseApplication extends Application {
     private void startApplication() {
         Stetho.initializeWithDefaults(this);
 
-        // TODO Tip. 파이어 베이스 Application에서 초기화 하기.
+        // TODO 12. 예외상황 - 파이어 베이스 Application에서 초기화 하기.
         FirebaseUtil.initialize(this);
     }
 }

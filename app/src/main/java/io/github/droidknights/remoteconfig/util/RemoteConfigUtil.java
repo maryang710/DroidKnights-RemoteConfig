@@ -14,7 +14,6 @@ import io.github.droidknights.remoteconfig.R;
 
 public class RemoteConfigUtil {
 
-    // TODO 5. 초기화. Remote Config Admin에 설정한 값들을 처음에 받아온다.
     public static void initialize() {
         FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
@@ -23,6 +22,7 @@ public class RemoteConfigUtil {
                 .build();
 
         remoteConfig.setConfigSettings(configSettings);
+        // 로컬 기본값을 저장한 xml을 설정한다.
         remoteConfig.setDefaults(R.xml.remote_config_defaults);
 
         // 기본 캐쉬 만료시간은 12시간이다. 원래는 Developer Mode 여부에 따라 숫자를 바꾸지만 여기서는 Test를 위해 0으로 한다.
@@ -31,7 +31,6 @@ public class RemoteConfigUtil {
         });
     }
 
-    // TODO 6. 값 받아오기.
     public static String getConfigValue(String key) {
         FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
         return remoteConfig.getString(key);

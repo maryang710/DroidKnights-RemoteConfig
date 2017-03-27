@@ -6,7 +6,6 @@ package io.github.droidknights.remoteconfig.constant;
 
 public class RemoteConfigConstant {
 
-    // TODO 6. 값 받아오기. Key를 상수로 설정한다.
     public static final String EXAMPLE_KEY = "example_key";
     public static final String CONDITION_EXAMPLE_KEY = "condition_example_key";
 
